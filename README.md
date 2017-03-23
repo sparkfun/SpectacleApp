@@ -1,6 +1,5 @@
 # SpectacleApp
-Prototype Spectacle configuration app <br/>
-moved from https://jsfiddle.net/N0rth/pLh72mj9/
+Spectacle configuration app <br/>
 <br/>
 <h2>Browser Compatibility</h2>
 How badly is it broken for the big 5 browsers?<br/>
