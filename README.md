@@ -2,8 +2,8 @@
 Prototype Spectacle configuration app <br/>
 moved from https://jsfiddle.net/N0rth/pLh72mj9/
 <br/>
-<h2>Browser Compatibility (anticipated)</h2>
-How badly have I broken it for the big 5 browsers so far?<br/>
+<h2>Browser Compatibility</h2>
+How badly is it broken for the big 5 browsers?<br/>
 <table style="width: 539px; height: 223px; text-align: center;">
 <tbody>
 <tr>
@@ -54,49 +54,3 @@ Other scrapers, such as Pinterest's "Rich Pin" system, will accept Facebook Open
 * spectrum.css - http://bgrins.github.io/spectrum/<br/>
 * LICENSE - MIT License<br/>
 <br/>
-<h2>Development Roadmap</h2>
-<strong>Navigation and File Manipulation</strong><br/>
-☑ Frontpage navigation<br/>
-☑ Project name pane<br/>
-☑ Project Info module<br/>
-☑ Module Prototypes<br/>
-☑ Module sorting functionality<br/>
-☑ Module delete functionality<br/>
-☑ Module addition menu <br/>
-☑ Module addition functionality <br/>
-☑ Dynamically save textarea values to Document object<br/>
-☑ Action prototypes <del>(development documented here: https://jsfiddle.net/N0rth/j29z7244/)</del><br/>
-☑ Action addition menu <del>(development documented here: https://jsfiddle.net/N0rth/evzkmvk6/)</del><br/>
-☑ Action addition functionality <del>(development documented here: https://jsfiddle.net/N0rth/evzkmvk6/)</del><br/>
-☑ Action delete functionality <del>(development documented here: https://jsfiddle.net/N0rth/j29z7244/)</del><br/>
-☑ Report action lists to board elements<br/>
-<del>☑ Save image as base64 to document object</del> *(Image attachment removed)*<br/>
-☑ Save canvas element base64 encoded<br/>
-☑ Retreive canvas element base64 decoded<br/>
-☑ Periodic Autosave<br/>
-☑ Autoretrieve localSave on pageload <br/>
-☑ Fix scaling for iOS browsers <br/>
-☑ Configuration Upload Menu <br/>
-☑ Google Drive API integration <br/>
-<strong>Logic and Configuration <del>\*\*Need Final Firmware\*\*</del></strong><br/>
-☑ Generate Real Config <br/>
-☑ Configuration Upload functionality<br/>
-☑ Graphics review with Pete H.<br/>
-<strong>Web Dressing</strong><br/>
-☑ iOS "Add to Homescreen" icons <br/>
-☑ Chrome "Add to Homescreen" icons and manifest <br/>
-☑ Favicon *(Get one that looks good from Pete)*<br/>
-☑ Windows Tile icons <br/>
-☑ El Capitan Safari mask icons <br/>
-☑ Pass Favicon Checker ([test results](http://realfavicongenerator.net/favicon_checker?protocol=https&site=npoole.github.io%2FSpectacleApp%2F#.WKJFyzsrJPb))<br/>
-☑ Facebook Open Graph meta tags <br/>
-☑ Twitter Card meta tags <br/>
-☐ Validate and Apply Social meta tags <br/>
-<strong>Fun Shit</strong><br/>
-☑ Random Adjective default boardname generator <br/>
-☑ Random Adjective default project name generator <br/>
-<strong>B-B-B-BONUS ROUND!!! (Deploy)</strong><br/>
-☐ Migrate this repo to SparkFun Pro GitHub Account<br/>
-☐ SparkFun CNAME Record<br/>
-☐ Spectacle Google Account<br/>
-☐ Register New Spectacle Google Drive Keys<br/>
