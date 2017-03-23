@@ -33,10 +33,10 @@ Sharing projects on Spectacle is enabled through integration with Google Driveâ„
 <h2>Social Sharing Meta Tags</h2>
 Sharing projects on social media should result in rich, attractive links:<br/><br/>
 <strong>Twitter</strong><br/>
-![spectaclecard](https://cloud.githubusercontent.com/assets/1609220/22907766/0a570d90-f208-11e6-8cd2-4bdb0f095134.PNG)
+<img alt="spectaclecard" src="https://cloud.githubusercontent.com/assets/1609220/22907766/0a570d90-f208-11e6-8cd2-4bdb0f095134.PNG">
 <br/>
 <strong>Facebook</strong><br/>
-![spectacleog](https://cloud.githubusercontent.com/assets/1609220/22907767/0a62775c-f208-11e6-81ac-6e929c90d21f.PNG)
+<img alt="spectacleog" src="https://cloud.githubusercontent.com/assets/1609220/22907767/0a62775c-f208-11e6-81ac-6e929c90d21f.PNG">
 <br/>
 Other scrapers, such as Pinterest's "Rich Pin" system, will accept Facebook Open Graph tags as well.
 <br/>
