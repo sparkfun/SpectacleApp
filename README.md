@@ -14,9 +14,9 @@ How badly is it broken for the big 5 browsers?<br/>
 </tr>
 <tr>
 <td style="width: 106.4px;">&#10004;<br/><small>Please Use Chrome</small></td>
-<td style="width: 107.2px;">&#10004;<br/><small>Polyfills fixed UI</small></td>
+<td style="width: 107.2px;">&#10004;<br/><small>Seems good</small></td>
 <td style="width: 108px;">&#10004;<br/><small>Opera is Fine Too</small></td>
-<td style="width: 108px;">&#10071;<br/><small>File Saving Bug</small></td>
+<td style="width: 108px;">&#10071;<br/><small>Local Save Broken</small></td>
 <td style="width: 108px;">&#10006;<br/><small>Are you kidding?</small></td>
 </tr>
 </tbody>
