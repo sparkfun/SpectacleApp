@@ -2,7 +2,7 @@ var adjective = ["agreeable", "alert", "alluring", "ambitious", "amused", "bound
 
 /***********************************Google Drive API Integration*************************************/
 
-      var CLIENT_ID = '814786036514-pqslm9me6e5hipjoq9fjj8f36b7n2c2i.apps.googleusercontent.com';
+      var CLIENT_ID = '94915341399-fqt9irip5i9rtb94t6oroati0arftkc8.apps.googleusercontent.com';
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
       var SCOPES = 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file';
       var authorizeButton = document.getElementById('authorize-button');
