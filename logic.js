@@ -1,4 +1,4 @@
-var adjective = ["agreeable", "alert", "alluring", "ambitious", "amused", "boundless", "brave", "bright", "calm", "capable", "charming", "cheerful", "coherent", "comfortable", "confident", "cooperative", "courageous", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "decorous", "delightful", "detailed", "determined", "diligent", "discreet", "dynamic", "eager", "efficient", "elated", "eminent", "enchanting", "encouraging", "endurable", "energetic", "entertaining", "enthusiastic", "excellent", "excited", "exclusive", "exuberant", "fabulous", "fair", "faithful", "fantastic", "fearless", "fine", "frank", "friendly", "funny", "generous", "gentle", "glorious", "good", "happy", "harmonious", "helpful", "hilarious", "honorable", "impartial", "industrious", "instinctive", "jolly", "joyous", "kind", "kind-hearted", "knowledgeable", "level", "likeable", "lively", "lovely", "loving", "lucky", "mature", "modern", "nice", "obedient", "painstaking", "peaceful", "perfect", "placid", "plausible", "pleasant", "plucky", "productive", "protective", "proud", "punctual", "quiet", "receptive", "reflective", "relieved", "resolute", "responsible", "rhetorical", "righteous", "romantic", "sedate", "seemly", "selective", "self-assured", "sensitive", "shrewd", "silly", "sincere", "skillful", "smiling", "splendid", "steadfast", "stimulating", "successful", "succinct", "talented", "thoughtful", "thrifty", "tough", "trustworthy", "unbiased", "unusual", "upbeat", "vigorous", "vivacious", "warm", "willing", "wise", "witty", "wonderful"];
+.var adjective = ["agreeable", "alert", "alluring", "ambitious", "amused", "boundless", "brave", "bright", "calm", "capable", "charming", "cheerful", "coherent", "comfortable", "confident", "cooperative", "courageous", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "decorous", "delightful", "detailed", "determined", "diligent", "discreet", "dynamic", "eager", "efficient", "elated", "eminent", "enchanting", "encouraging", "endurable", "energetic", "entertaining", "enthusiastic", "excellent", "excited", "exclusive", "exuberant", "fabulous", "fair", "faithful", "fantastic", "fearless", "fine", "frank", "friendly", "funny", "generous", "gentle", "glorious", "good", "happy", "harmonious", "helpful", "hilarious", "honorable", "impartial", "industrious", "instinctive", "jolly", "joyous", "kind", "kind-hearted", "knowledgeable", "level", "likeable", "lively", "lovely", "loving", "lucky", "mature", "modern", "nice", "obedient", "painstaking", "peaceful", "perfect", "placid", "plausible", "pleasant", "plucky", "productive", "protective", "proud", "punctual", "quiet", "receptive", "reflective", "relieved", "resolute", "responsible", "rhetorical", "righteous", "romantic", "sedate", "seemly", "selective", "self-assured", "sensitive", "shrewd", "silly", "sincere", "skillful", "smiling", "splendid", "steadfast", "stimulating", "successful", "succinct", "talented", "thoughtful", "thrifty", "tough", "trustworthy", "unbiased", "unusual", "upbeat", "vigorous", "vivacious", "warm", "willing", "wise", "witty", "wonderful"];
 
 /***********************************Google Drive API Integration*************************************/
 
@@ -1067,119 +1067,119 @@ function configBuilder(pseudo){
 		
 			case "led-rainbow-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1,999))+"\n";
-				configString+="1.4\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
+				configString+="1.4\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="4.0\n";
 				configString+="4.0\n";
 				configString+="1.0\n";
-				configString+="1."+pseudoString[index+3]+"\n";
-				configString+="4."+Math.round(pseudoString[index+4]*2)+"\n";
+				configString+="1."+pseudoString[index+4]+"\n";
+				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n";
 				break;
 				
 			case "led-theater-chase":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
-				configString+="1.5\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
+				configString+="1.5\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+6])+"\n"; 
 				configString+="4.0\n";
 				configString+="1.0\n";
-				configString+="1."+pseudoString[index+3]+"\n";
-				configString+="4."+Math.round(pseudoString[index+4]*2)+"\n";			
+				configString+="1."+pseudoString[index+4]+"\n";
+				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n";			
 				break;
 				
 			case "led-scanning-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
-				configString+="1.6\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
+				configString+="1.6\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+6])+"\n"; 
 				configString+="4.0\n";
 				configString+="1.0\n";
-				configString+="1."+pseudoString[index+3]+"\n";
-				configString+="4."+Math.round(pseudoString[index+4]*2)+"\n";						
+				configString+="1."+pseudoString[index+4]+"\n";
+				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n";						
 				break;
 				
 			case "led-twinkle-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
-				configString+="1.7\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+3])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1.7\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+4])+"\n"; 
 				configString+="4.0\n";
-				configString+="1."+Math.round(scale(pseudoString[index+6],0,1000,0,59))+"\n";
-				configString+="1."+pseudoString[index+4]+"\n";
-				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n"; // twinkle speed 2ms-2s									
+				configString+="1."+Math.round(scale(pseudoString[index+7],0,1000,0,59))+"\n";
+				configString+="1."+pseudoString[index+5]+"\n";
+				configString+="4."+Math.round(pseudoString[index+6]*2)+"\n"; // twinkle speed 2ms-2s									
 				break;
 				
 			case "led-lightning-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
-				configString+="1.8\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+3])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1.8\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+4])+"\n"; 
 				configString+="4.0\n";
-				configString+="1."+Math.round(scale(pseudoString[index+6],0,1000,0,59))+"\n";
-				configString+="1."+pseudoString[index+4]+"\n";
-				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n"; // lightning speed 2ms-2s									
+				configString+="1."+Math.round(scale(pseudoString[index+7],0,1000,0,59))+"\n";
+				configString+="1."+pseudoString[index+5]+"\n";
+				configString+="4."+Math.round(pseudoString[index+6]*2)+"\n"; // lightning speed 2ms-2s									
 				break;
 				
 			case "led-flame-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1,999))+"\n";
-				configString+="1.9\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+4])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
+				configString+="1.9\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
 				configString+="4.0\n";
 				configString+="1.0\n";
-				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="1."+pseudoString[index+4]+"\n";
 				configString+="4.0\n";												
 				break;
 				
 			case "led-fade-lights":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
-				configString+="1.2\n";
 				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+3])+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1.2\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="4."+colorConvert(pseudoString[index+4])+"\n"; 
+				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
 				configString+="1.0\n";
-				configString+="1."+pseudoString[index+5]+"\n";
-				configString+="4."+Math.round(pseudoString[index+6]*10)+"\n"; // fade step = 1ms-1s									
+				configString+="1."+pseudoString[index+6]+"\n";
+				configString+="4."+Math.round(pseudoString[index+7]*10)+"\n"; // fade step = 1ms-1s									
 				break;
 				
 			case "led-fill-color":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
 				configString+="1.3\n";
-				configString+="1."+pseudoString[index+3]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
-				configString+="4.0\n"; 
 				configString+="1."+pseudoString[index+4]+"\n";
-				configString+="1."+pseudoString[index+6]+"\n";
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 											
+				configString+="4."+colorConvert(pseudoString[index+6])+"\n"; 
+				configString+="4.0\n"; 
+				configString+="1."+pseudoString[index+5]+"\n";
+				configString+="1."+pseudoString[index+7]+"\n";
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 											
 				break;
 				
 			case "led-light-pixel":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
 				configString+="1.3\n";
-				configString+="1."+pseudoString[index+3]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+5])+"\n"; 
-				configString+="4.0\n"; 
 				configString+="1."+pseudoString[index+4]+"\n";
-				configString+="1."+pseudoString[index+6]+"\n";
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 														
+				configString+="4."+colorConvert(pseudoString[index+6])+"\n"; 
+				configString+="4.0\n"; 
+				configString+="1."+pseudoString[index+5]+"\n";
+				configString+="1."+pseudoString[index+7]+"\n";
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 														
 				break;
 				
 		// Button Board Translators 
