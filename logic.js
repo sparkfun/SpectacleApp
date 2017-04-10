@@ -1265,49 +1265,49 @@ function configBuilder(pseudo){
 				
 			case "motor-toggle-position":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="1.1\n";
-				configString+="2."+Math.round(scale(pseudoString[index+4],0,1000,1000,2000))+"\n"; 
-				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1000,2000))+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+5]*1000)+"\n"; 																		
+				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1000,2000))+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1000,2000))+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+6]*1000)+"\n"; 																		
 				break;
 				
 			case "motor-sweep-and-return":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="1.0\n";
-				configString+="2."+Math.round(scale(pseudoString[index+4],0,1000,1000,2000))+"\n"; 
-				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1000,2000))+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+5]*1000)+"\n"; 																					
+				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1000,2000))+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1000,2000))+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+6]*1000)+"\n"; 																					
 				break;
 				
 			case "motor-wag":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="1.2\n";
-				configString+="2."+Math.round(scale(pseudoString[index+4],0,1000,1000,2000))+"\n"; 
-				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1000,2000))+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+5]*1000)+"\n"; 																					
+				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1000,2000))+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1000,2000))+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+6]*1000)+"\n"; 																					
 				break;
 				
 			case "motor-go-to-position":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1,999))+"\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				configString+="1.3\n";
-				configString+="2."+Math.round(scale(pseudoString[index+4],0,1000,1000,2000))+"\n"; 
+				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1000,2000))+"\n"; 
 				configString+="2.0\n";
-				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 
 				configString+="4.0\n"; 																					
 				break;
 				
