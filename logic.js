@@ -1403,9 +1403,9 @@ function configBuilder(pseudo){
 	
 			case "virtual-constant-input":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="1."+pseudoString[index+1]+"\n";
 				configString+="1.7\n";
-				configString+="2."+Math.round(pseudoString[index+3])+"\n"; 								
+				configString+="2."+Math.round(pseudoString[index+2])+"\n"; 								
 				break;			
 		
 		}
