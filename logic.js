@@ -1349,63 +1349,63 @@ function configBuilder(pseudo){
 				
 			case "virtual-invert-filter":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="1.0\n";
 				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="1.0\n";
+				configString+="1."+pseudoString[index+3]+"\n";
 				break;
 	
 			case "virtual-both-active-filter":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.1\n";
-				configString+="1."+pseudoString[index+2]+"\n";		
 				configString+="1."+pseudoString[index+3]+"\n";		
+				configString+="1."+pseudoString[index+4]+"\n";		
 				break;
 	
 			case "virtual-channel-combiner":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.2\n";
-				configString+="1."+pseudoString[index+2]+"\n";		
-				configString+="1."+pseudoString[index+3]+"\n";						
+				configString+="1."+pseudoString[index+3]+"\n";		
+				configString+="1."+pseudoString[index+4]+"\n";						
 				break;
 	
 			case "virtual-difference-detector":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.3\n";
-				configString+="1."+pseudoString[index+2]+"\n";		
-				configString+="1."+pseudoString[index+3]+"\n";						
+				configString+="1."+pseudoString[index+3]+"\n";		
+				configString+="1."+pseudoString[index+4]+"\n";						
 				break;
 	
 			case "virtual-random-input":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.5\n";
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 	
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 	
 				configString+="4.250\n"; 											
 				break;
 	
 			case "virtual-periodic-input":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.6\n";
-				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 	
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 					
+				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 	
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 					
 				break;
 	
 			case "virtual-sustained-input":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.4\n";
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 				
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 				
 				break;
 	
 			case "virtual-constant-input":
 				configString+="V\n";
-				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="1.7\n";
-				configString+="2."+Math.round(pseudoString[index+2])+"\n"; 								
+				configString+="2."+Math.round(pseudoString[index+3])+"\n"; 								
 				break;			
 		
 		}
