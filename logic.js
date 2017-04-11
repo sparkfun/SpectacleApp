@@ -1315,12 +1315,12 @@ function configBuilder(pseudo){
 				
 			case "sound-play-sound":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+5],0,1000,1,999))+"\n";
-				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="1."+pseudoString[index+2]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+4]+"\n";
 				configString+="1.0\n";
-				configString+="4."+Math.round(pseudoString[index+2]*1000)+"\n"; 
-				configString+="4."+Math.round(pseudoString[index+4]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+3]*1000)+"\n"; 
+				configString+="4."+Math.round(pseudoString[index+5]*1000)+"\n"; 
 				break;
 					
 		// New Board Markers
