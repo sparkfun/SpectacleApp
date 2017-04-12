@@ -1,4 +1,5 @@
 var adjective = ["agreeable", "alert", "alluring", "ambitious", "amused", "boundless", "brave", "bright", "calm", "capable", "charming", "cheerful", "coherent", "comfortable", "confident", "cooperative", "courageous", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "decorous", "delightful", "detailed", "determined", "diligent", "discreet", "dynamic", "eager", "efficient", "elated", "eminent", "enchanting", "encouraging", "endurable", "energetic", "entertaining", "enthusiastic", "excellent", "excited", "exclusive", "exuberant", "fabulous", "fair", "faithful", "fantastic", "fearless", "fine", "frank", "friendly", "funny", "generous", "gentle", "glorious", "good", "happy", "harmonious", "helpful", "hilarious", "honorable", "impartial", "industrious", "instinctive", "jolly", "joyous", "kind", "kind-hearted", "knowledgeable", "level", "likeable", "lively", "lovely", "loving", "lucky", "mature", "modern", "nice", "obedient", "painstaking", "peaceful", "perfect", "placid", "plausible", "pleasant", "plucky", "productive", "protective", "proud", "punctual", "quiet", "receptive", "reflective", "relieved", "resolute", "responsible", "rhetorical", "righteous", "romantic", "sedate", "seemly", "selective", "self-assured", "sensitive", "shrewd", "silly", "sincere", "skillful", "smiling", "splendid", "steadfast", "stimulating", "successful", "succinct", "talented", "thoughtful", "thrifty", "tough", "trustworthy", "unbiased", "unusual", "upbeat", "vigorous", "vivacious", "warm", "willing", "wise", "witty", "wonderful"];
+var slideDur = 200;
 
 /***********************************Google Drive API Integration*************************************/
 
@@ -202,7 +203,7 @@ To start a new script, press OK.");
     localStorage.setItem("cached", null);
     window.location.href = 'https://npoole.github.io/SpectacleApp/';
     }else{
-      $(".menu").slideToggle("slow", function() {
+      $(".menu").slideToggle(slideDur, function() {
     $(".cross").hide();
     $(".hamburger").show();
   });    
@@ -248,7 +249,7 @@ $("load-foot").hide();
 
 // Handler for opening the hamburger menu
 $(".hamburger").click(function() {
-  $(".menu").slideToggle("slow", function() {
+  $(".menu").slideToggle(slideDur, function() {
     $(".hamburger").hide();
     $(".cross").show();
   });
@@ -256,7 +257,7 @@ $(".hamburger").click(function() {
 
 // Handler for closing the hamburger menu
 $(".cross").click(function() {
-  $(".menu").slideToggle("slow", function() {
+  $(".menu").slideToggle(slideDur, function() {
     $(".cross").hide();
     $(".hamburger").show();
   });
@@ -268,7 +269,7 @@ $(".cross").click();}
 
 // Handler for "Add Module" navigation action
 $(".add-module").click(function() {
-  $(".module-list").slideToggle("slow", function() {
+  $(".module-list").slideToggle(slideDur, function() {
     $("footer").hide();
     $("exit-foot").show();
   });
@@ -276,7 +277,7 @@ $(".add-module").click(function() {
 
 // Module list exit handler
 $(".mod-list-exit").click(function() {
-  $(".module-list").slideToggle("slow", function() {
+  $(".module-list").slideToggle(slideDur, function() {
     $("footer").show();
     $("exit-foot").hide();
   });
@@ -287,7 +288,7 @@ var targetmodule = $(this);
 while(targetmodule.attr("class").split(' ')[0] != "module"){
 targetmodule = targetmodule.parent();
 }
-$(targetmodule).find(".actions-list").slideToggle("slow", function() {
+$(targetmodule).find(".actions-list").slideToggle(slideDur, function() {
     $("footer").hide();
     $("actions-foot").show();
     window.scrollTo(0, 0);
@@ -300,14 +301,14 @@ while(targetmodule.attr("class").split(' ')[0] != "module"){
 targetmodule = targetmodule.parent();
 };
 window.scrollTo(0, 0);
-$(targetmodule).find(".act-menu").slideToggle("slow", function() {
+$(targetmodule).find(".act-menu").slideToggle(slideDur, function() {
     $("actions-foot").hide();
     $("blank-foot").show();
   });
 }));
 
 function hideActMenu(){
-$(".act-menu:visible").slideToggle("slow", function() {
+$(".act-menu:visible").slideToggle(slideDur, function() {
     $("actions-foot").show();
     $("blank-foot").hide();	
   });
@@ -341,7 +342,7 @@ $(document).on("click", ".act-list-exit", (function(){
 		alert("You've left some number fields blank. We filled them with zeroes but you may want to double check them!");
 	}
 	// Fold away the menu and replace the footer	
-	$(".actions-list:visible").slideToggle("slow", function() {
+	$(".actions-list:visible").slideToggle(slideDur, function() {
     $("footer").show();
     $("actions-foot").hide();
   });
@@ -349,7 +350,7 @@ $(document).on("click", ".act-list-exit", (function(){
 
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
-    $(".program-hardware").slideToggle("slow", function() {
+    $(".program-hardware").slideToggle(slideDur, function() {
 	animate = $(howToGif).clone().appendTo($("#howtoprogram"));
     $("footer").hide();
     $("program-foot").show();
@@ -363,7 +364,7 @@ $(".program-button").click(function() {
 
 // Hardware Configure exit handler
 $(".program-pane-exit").click(function() {
-  $(".program-hardware").slideToggle("slow", function() {
+  $(".program-hardware").slideToggle(slideDur, function() {
 	$("#howtoprogram").find("img").remove();
     $("footer").show();
     $("program-foot").hide();
@@ -372,7 +373,7 @@ $(".program-pane-exit").click(function() {
 
 // Share Project Menu Handler
 $(".share-you-project").click(function() {
-    $(".share-project").slideToggle("slow", function() {
+    $(".share-project").slideToggle(slideDur, function() {
     $("footer").hide();
     $("share-foot").show();
   });
@@ -383,7 +384,7 @@ $(".share-pane-exit").click(function() {
   $(".share-link").html("");
   if(gapi.auth2.getAuthInstance().isSignedIn.get()){
   $(".save-button-authed").show();}
-  $(".share-project").slideToggle("slow", function() {
+  $(".share-project").slideToggle(slideDur, function() {
     $("footer").show();
     $("share-foot").hide();
   });
@@ -405,7 +406,7 @@ function saveCanvas() {
 
 // Retrieve editable project file locally
 function loadCanvas() {
-   $(".menu").slideToggle("slow", function() {
+   $(".menu").slideToggle(slideDur, function() {
      $(".cross").hide();
      $(".hamburger").show();
    });
@@ -414,7 +415,7 @@ function loadCanvas() {
 
 // Launch linked file prompt
 function googleDriveLoad(){
-  $(".load-google-drive").slideToggle("slow", function() {
+  $(".load-google-drive").slideToggle(slideDur, function() {
     $("footer").hide();
     $("load-foot").show();
   });	
@@ -716,7 +717,7 @@ $(".add-light").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();   
       });
@@ -736,7 +737,7 @@ $(".add-button").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();     
       });
@@ -756,7 +757,7 @@ $(".add-accel").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();  
       });
@@ -776,7 +777,7 @@ $(".add-motion").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();   
       });
@@ -796,7 +797,7 @@ $(".add-sound").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();   
       });
@@ -817,7 +818,7 @@ $(".add-virtual").click(function(){
 	$(".actions-list").hide();
 	$("actions-foot").hide();
 	$(".act-menu").hide();	   
-      $(".module-list").slideToggle("slow", function() {
+      $(".module-list").slideToggle(slideDur, function() {
         $("footer").show();
         $("exit-foot").hide();   
       });
