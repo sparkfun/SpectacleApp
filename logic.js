@@ -1174,7 +1174,7 @@ function configBuilder(pseudo){
 				configString+="n\n"; // new behavior begin
 				configString+="1."+pseudoString[index+2]+"\n";
 				configString+="2."+Math.round(scale(pseudoString[index+8],0,1000,1,999))+"\n";
-				configString+="1.3\n";
+				configString+="1.1\n";
 				configString+="1."+pseudoString[index+4]+"\n";
 				configString+="4."+colorConvert(pseudoString[index+6])+"\n"; 
 				configString+="4.0\n"; 
