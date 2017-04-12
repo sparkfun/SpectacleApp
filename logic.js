@@ -1224,13 +1224,13 @@ function configBuilder(pseudo){
 				
 			case "inertia-sense-motion":
 				configString+="n\n"; // new behavior begin			
-				configString+="1."+pseudoString[index+5]+"\n";
-				if(pseudoString[index+3]!=0){ // MOVE radio button
+				configString+="1."+pseudoString[index+6]+"\n";
+				if(pseudoString[index+4]!=0){ // MOVE radio button
 					configString+="1.0\n"; // Active
 				}else{
 					configString+="1.1\n"; // Inactive
 				}
-				if(pseudoString[index+1]!=0){ // IF radio button
+				if(pseudoString[index+2]!=0){ // IF radio button
 					configString+="1.1\n"; // Momentary
 				}else{
 					configString+="1.0\n"; // NO Momentary
@@ -1239,14 +1239,14 @@ function configBuilder(pseudo){
 				
 			case "inertia-sense-orientation":
 				configString+="n\n"; // new behavior begin			
-				configString+="1."+pseudoString[index+9]+"\n";
-				if(pseudoString[index+3]!=0){configString+="1.2\n";} // A
-				if(pseudoString[index+4]!=0){configString+="1.3\n";} // B
-				if(pseudoString[index+5]!=0){configString+="1.4\n";} // C
-				if(pseudoString[index+6]!=0){configString+="1.5\n";} // D
-				if(pseudoString[index+7]!=0){configString+="1.6\n";} // TOP
-				if(pseudoString[index+8]!=0){configString+="1.7\n";} // BOTTOM
-				if(pseudoString[index+1]!=0){ // IF radio button
+				configString+="1."+pseudoString[index+10]+"\n";
+				if(pseudoString[index+4]!=0){configString+="1.2\n";} // A
+				if(pseudoString[index+5]!=0){configString+="1.3\n";} // B
+				if(pseudoString[index+6]!=0){configString+="1.4\n";} // C
+				if(pseudoString[index+7]!=0){configString+="1.5\n";} // D
+				if(pseudoString[index+8]!=0){configString+="1.6\n";} // TOP
+				if(pseudoString[index+9]!=0){configString+="1.7\n";} // BOTTOM
+				if(pseudoString[index+2]!=0){ // IF radio button
 					configString+="1.1\n"; // Momentary
 				}else{
 					configString+="1.0\n"; // NO Momentary
@@ -1255,10 +1255,10 @@ function configBuilder(pseudo){
 				
 			case "inertia-measure-acceleration":
 				configString+="n\n"; // new behavior begin			
-				configString+="1."+pseudoString[index+4]+"\n";
-				if(pseudoString[index+1]!=0){configString+="1.9\n";} // A-B
-				if(pseudoString[index+2]!=0){configString+="1.8\n";} // C-D
-				if(pseudoString[index+3]!=0){configString+="1.10\n";} // TOP-BOTTOM
+				configString+="1."+pseudoString[index+5]+"\n";
+				if(pseudoString[index+2]!=0){configString+="1.9\n";} // A-B
+				if(pseudoString[index+3]!=0){configString+="1.8\n";} // C-D
+				if(pseudoString[index+4]!=0){configString+="1.10\n";} // TOP-BOTTOM
 				configString+="1.0\n"; // NO Momentary
 				break;
 				
