@@ -125,7 +125,7 @@ var slideDur = 200;
 		    console.log(file);
 			  if(file.id != undefined){
 		    $(".save-button-authed").hide();
-		    var SpectacleLink = "https://npoole.github.io/SpectacleApp/?fileID=" + file.id;
+		    var SpectacleLink = "https://sparkfun.github.io/spectacleapp/?fileID=" + file.id;
 		    $(".share-link").html("<h2>Shareable Link:<\/h2><a href=\"" + SpectacleLink + "\" target=\"_blank\" style=\"color: white;\">" + SpectacleLink + "<\/a>");}
 		    var request = gapi.client.request({
 		    'path': 'https://www.googleapis.com/drive/v3/files/' + file.id + '/permissions',
@@ -201,7 +201,7 @@ If you want to keep your progress, press Cancel and then Save or Share your proj
 To start a new script, press OK.");
     if(makeSure==true){
     localStorage.setItem("cached", null);
-    window.location.href = 'https://npoole.github.io/SpectacleApp/';
+    window.location.href = 'https://sparkfun.github.io/spectacleapp/';
     }else{
       $(".menu").slideToggle(slideDur, function() {
     $(".cross").hide();
@@ -395,7 +395,7 @@ $(".share-pane-exit").click(function() {
 
 // Google Drive Load Pane exit handler
 $(".load-pane-exit").click(function() {
-window.location.href = 'https://npoole.github.io/SpectacleApp/';
+window.location.href = 'https://sparkfun.github.io/spectacleapp/';
 });
 
 // Save editable project file locally
@@ -491,19 +491,19 @@ $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);
 
 lightModuleProto = document.createElement("div");
 lightModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect12976.png\">\
-<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-up-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-dn-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect12976.png\">\
+<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-up-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-dn-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">light board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list light\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #ffbd91;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #ffbd91;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
@@ -524,19 +524,19 @@ $(lightModuleProto).addClass("module light-module");
 
 buttonModuleProto = document.createElement("div");
 buttonModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect12207b.png\">\
-<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-up-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-dn-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect12207b.png\">\
+<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-up-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-dn-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">button board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list button\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #ffe680;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #ffe680;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
@@ -553,19 +553,19 @@ $(buttonModuleProto).addClass("module button-module");
 
 accelModuleProto = document.createElement("div");
 accelModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect8398-1.png\">\
-<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-up-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-dn-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect8398-1.png\">\
+<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-up-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-dn-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">inertia board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list accel\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #f29595;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #f29595;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
@@ -579,19 +579,19 @@ $(accelModuleProto).addClass("module accel-module");
 
 motionModuleProto = document.createElement("div");
 motionModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect8398-3.png\">\
-<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-up-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-dn-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect8398-3.png\">\
+<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-up-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-dn-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">motion board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list motion\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #b9f1ab;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #b9f1ab;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
@@ -606,19 +606,19 @@ $(motionModuleProto).addClass("module motion-module");
 
 soundModuleProto = document.createElement("div");
 soundModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect8398-2.png\">\
-<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-up-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-dn-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect8398-2.png\">\
+<input type=\"image\" class=\"mod-label mod-up\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-up-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-dn\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-dn-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">sound board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list sound\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #e8b5f4;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #e8b5f4;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
@@ -630,17 +630,17 @@ $(soundModuleProto).addClass("module sound-module");
 
 virtualModuleProto = document.createElement("div");
 virtualModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
-<img class=\"mod-label\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect8398-4.png\">\
-<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-x-sml.png\">\
-<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/rect-act-sml.png\">\
+<img class=\"mod-label\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect8398-4.png\">\
+<input type=\"image\" class=\"mod-label mod-del\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-x-sml.png\">\
+<input type=\"image\" class=\"mod-label mod-act\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/rect-act-sml.png\">\
 <div class=\"chunk\"><textarea id=\"mod-nick\" class=\"project-text\" style=\"font-size: 14pt\" rows=\"1\">virtual board<\/textarea><\/div>\
 <div class=\"chunk\"><textarea readonly id=\"mod-acts\" class=\"project-text\" rows=\"1\">No Actions Assigned<\/textarea>\
 <div class=\"actions-list virtual\"> <div class=\"mod-label\">\
-<img class=\"mod-label-fixed\" style=\"background-color: #f9f9f9;\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/actionstag.png\">\
+<img class=\"mod-label-fixed\" style=\"background-color: #f9f9f9;\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/actionstag.png\">\
 <\/div>\
 <div class=\"chunk add-reminder\">\
 <br>\
-<img width=\"300px\" src=\"https:\/\/npoole.github.io\/SpectacleApp\/img\/addactremind.png\">\
+<img width=\"300px\" src=\"https:\/\/sparkfun.github.io\/spectacleapp\/img\/addactremind.png\">\
 <\/div>\
 <\/div>\
 <\/div>\
