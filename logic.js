@@ -1,6 +1,7 @@
 var adjective = ["agreeable", "alert", "alluring", "ambitious", "amused", "boundless", "brave", "bright", "calm", "capable", "charming", "cheerful", "coherent", "comfortable", "confident", "cooperative", "courageous", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "decorous", "delightful", "detailed", "determined", "diligent", "discreet", "dynamic", "eager", "efficient", "elated", "eminent", "enchanting", "encouraging", "endurable", "energetic", "entertaining", "enthusiastic", "excellent", "excited", "exclusive", "exuberant", "fabulous", "fair", "faithful", "fantastic", "fearless", "fine", "frank", "friendly", "funny", "generous", "gentle", "glorious", "good", "happy", "harmonious", "helpful", "hilarious", "honorable", "impartial", "industrious", "instinctive", "jolly", "joyous", "kind", "kind-hearted", "knowledgeable", "level", "likeable", "lively", "lovely", "loving", "lucky", "mature", "modern", "nice", "obedient", "painstaking", "peaceful", "perfect", "placid", "plausible", "pleasant", "plucky", "productive", "protective", "proud", "punctual", "quiet", "receptive", "reflective", "relieved", "resolute", "responsible", "rhetorical", "righteous", "romantic", "sedate", "seemly", "selective", "self-assured", "sensitive", "shrewd", "silly", "sincere", "skillful", "smiling", "splendid", "steadfast", "stimulating", "successful", "succinct", "talented", "thoughtful", "thrifty", "tough", "trustworthy", "unbiased", "unusual", "upbeat", "vigorous", "vivacious", "warm", "willing", "wise", "witty", "wonderful"];
 var slideDur = 200;
 var slideNum = 0;
+setInterval(progSlideshow, 4000);
 
 /***********************************Google Drive API Integration*************************************/
 
@@ -352,7 +353,7 @@ $(document).on("click", ".act-list-exit", (function(){
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
     $(".program-hardware").slideToggle(slideDur, function() {
-	startSlideshow(1);
+	slideNum=0;
     $("footer").hide();
     $("program-foot").show();
   });
@@ -362,8 +363,7 @@ $(".program-button").click(function() {
 	audio_serial_write(configBuilder(pseudoConfig()));
   });
 
-function startSlideshow(reset){
-	if(reset){slideNum=0;}
+function progSlideshow(){
 	slideNum++;
 	switch (slideNum) {
 		case 1:
@@ -399,7 +399,6 @@ function startSlideshow(reset){
 		}
 	
 	if(slideNum>5){slideNum = 0;}
-	setTimeout(startSlideshow(), 2000);
 }
 
 // Hardware Configure exit handler
