@@ -359,7 +359,7 @@ $(document).on("click", ".act-list-exit", (function(){
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
     $(".program-hardware").slideToggle(slideDur, function() {
-	slideNum=0;
+	slideNum = 0;
 	progSlideshow();
     $("footer").hide();
     $("program-foot").show();
@@ -371,7 +371,7 @@ $(".program-button").click(function() {
   });
 
 function progSlideshow(){
-	slideNum = slideNum+ 1;
+	slideNum = slideNum + 1;
 	switch (slideNum) {
 		case 1:
 			$("#slide1").show();
@@ -379,30 +379,35 @@ function progSlideshow(){
 			$("#slide3").hide();
 			$("#slide4").hide();
 			$("#slide5").hide();
+			break;
 		case 2:
 			$("#slide1").hide();
 			$("#slide2").show();
 			$("#slide3").hide();
 			$("#slide4").hide();
 			$("#slide5").hide();
+			break;
 		case 3:
 			$("#slide1").hide();
 			$("#slide2").hide();
 			$("#slide3").show();
 			$("#slide4").hide();
 			$("#slide5").hide();
+			break;
 		case 4:
 			$("#slide1").hide();
 			$("#slide2").hide();
 			$("#slide3").hide();
 			$("#slide4").show();
 			$("#slide5").hide();
+			break;
 		case 5:
 			$("#slide1").hide();
 			$("#slide2").hide();
 			$("#slide3").hide();
 			$("#slide4").hide();
 			$("#slide5").show();
+			break;
 		}
 	
 	if(slideNum>5){slideNum = 0;}
