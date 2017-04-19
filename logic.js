@@ -374,32 +374,32 @@ function progSlideshow(){
 	slideNum = slideNum + 1;
 	switch (slideNum) {
 		case 1:
-			$("#slide1").fadeIn();
 			$("#slide2").fadeOut();
 			$("#slide3").fadeOut();
 			$("#slide4").fadeOut();
 			$("#slide5").fadeOut();
+			$("#slide1").fadeIn();
 			break;
 		case 2:
 			$("#slide1").fadeOut();
-			$("#slide2").fadeIn();
 			$("#slide3").fadeOut();
 			$("#slide4").fadeOut();
 			$("#slide5").fadeOut();
+			$("#slide2").fadeIn();
 			break;
 		case 3:
 			$("#slide1").fadeOut();
 			$("#slide2").fadeOut();
-			$("#slide3").fadeIn();
 			$("#slide4").fadeOut();
 			$("#slide5").fadeOut();
+			$("#slide3").fadeIn();
 			break;
 		case 4:
 			$("#slide1").fadeOut();
 			$("#slide2").fadeOut();
 			$("#slide3").fadeOut();
-			$("#slide4").fadeIn();
 			$("#slide5").fadeOut();
+			$("#slide4").fadeIn();
 			break;
 		case 5:
 			$("#slide1").fadeOut();
