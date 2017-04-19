@@ -360,6 +360,7 @@ $(document).on("click", ".act-list-exit", (function(){
 $(".config-hw").click(function() {
     $(".program-hardware").slideToggle(slideDur, function() {
 	slideNum=0;
+	progSlideshow();
     $("footer").hide();
     $("program-foot").show();
   });
