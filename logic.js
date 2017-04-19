@@ -351,7 +351,7 @@ $(document).on("click", ".act-list-exit", (function(){
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
     $(".program-hardware").slideToggle(slideDur, function() {
-	startSlideshow();
+	startSlideshow(0);
     $("footer").hide();
     $("program-foot").show();
   });
@@ -361,8 +361,28 @@ $(".program-button").click(function() {
 	audio_serial_write(configBuilder(pseudoConfig()));
   });
 
-function startSlideshow(){
+function startSlideshow(slideNum){
+	slideNum++;
+	switch (slideNum) {
+		case slide1:
+			$("#slide5").hide();
+			$("#slide1").show();
+		case slide2:
+			$("#slide1").hide();
+			$("#slide2").show();
+		case slide3:
+			$("#slide2").hide();
+			$("#slide3").show();
+		case slide4:
+			$("#slide3").hide();
+			$("#slide4").show();
+		case slide5:
+			$("#slide4").hide();
+			$("#slide5").show();
+		}
 	
+	if(slideNum>5){slideNum = 0;}
+	setTimeout(startSlideshow, 2000);
 }
 
 // Hardware Configure exit handler
