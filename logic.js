@@ -382,7 +382,7 @@ function startSlideshow(slideNum){
 		}
 	
 	if(slideNum>5){slideNum = 0;}
-	setTimeout(startSlideshow, 2000);
+	setTimeout(startSlideshow(slideNum), 2000);
 }
 
 // Hardware Configure exit handler
