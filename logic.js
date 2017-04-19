@@ -248,6 +248,12 @@ $("share-foot").hide();
 $(".share-project").hide();
 $(".load-google-drive").hide();
 $("load-foot").hide();
+$("#slide1").hide();
+$("#slide2").hide();
+$("#slide3").hide();
+$("#slide4").hide();
+$("#slide5").hide();
+
 
 // Handler for opening the hamburger menu
 $(".hamburger").click(function() {
