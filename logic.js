@@ -371,7 +371,7 @@ $(".program-button").click(function() {
   });
 
 function progSlideshow(){
-	slideNum++;
+	slideNum = slideNum+ 1;
 	switch (slideNum) {
 		case 1:
 			$("#slide1").show();
