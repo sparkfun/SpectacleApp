@@ -374,38 +374,38 @@ function progSlideshow(){
 	slideNum = slideNum + 1;
 	switch (slideNum) {
 		case 1:
-			$("#slide2").fadeOut();
-			$("#slide3").fadeOut();
-			$("#slide4").fadeOut();
-			$("#slide5").fadeOut();
+			$("#slide2").fadeOut(200);
+			$("#slide3").fadeOut(200);
+			$("#slide4").fadeOut(200);
+			$("#slide5").fadeOut(200);
 			$("#slide1").fadeIn();
 			break;
 		case 2:
-			$("#slide1").fadeOut();
-			$("#slide3").fadeOut();
-			$("#slide4").fadeOut();
-			$("#slide5").fadeOut();
+			$("#slide1").fadeOut(200);
+			$("#slide3").fadeOut(200);
+			$("#slide4").fadeOut(200);
+			$("#slide5").fadeOut(200);
 			$("#slide2").fadeIn();
 			break;
 		case 3:
-			$("#slide1").fadeOut();
-			$("#slide2").fadeOut();
-			$("#slide4").fadeOut();
-			$("#slide5").fadeOut();
+			$("#slide1").fadeOut(200);
+			$("#slide2").fadeOut(200);
+			$("#slide4").fadeOut(200);
+			$("#slide5").fadeOut(200);
 			$("#slide3").fadeIn();
 			break;
 		case 4:
-			$("#slide1").fadeOut();
-			$("#slide2").fadeOut();
-			$("#slide3").fadeOut();
-			$("#slide5").fadeOut();
+			$("#slide1").fadeOut(200);
+			$("#slide2").fadeOut(200);
+			$("#slide3").fadeOut(200);
+			$("#slide5").fadeOut(200);
 			$("#slide4").fadeIn();
 			break;
 		case 5:
-			$("#slide1").fadeOut();
-			$("#slide2").fadeOut();
-			$("#slide3").fadeOut();
-			$("#slide4").fadeOut();
+			$("#slide1").fadeOut(200);
+			$("#slide2").fadeOut(200);
+			$("#slide3").fadeOut(200);
+			$("#slide4").fadeOut(200);
 			$("#slide5").fadeIn();
 			break;
 		}
