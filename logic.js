@@ -361,7 +361,7 @@ $(".program-button").click(function() {
 	audio_serial_write(configBuilder(pseudoConfig()));
   });
 
-funtion startSlideshow(){
+function startSlideshow(){
 	
 }
 
