@@ -351,7 +351,7 @@ $(document).on("click", ".act-list-exit", (function(){
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
     $(".program-hardware").slideToggle(slideDur, function() {
-	animate = $(howToGif).clone().appendTo($("#howtoprogram"));
+	startSlideshow();
     $("footer").hide();
     $("program-foot").show();
   });
@@ -361,6 +361,9 @@ $(".program-button").click(function() {
 	audio_serial_write(configBuilder(pseudoConfig()));
   });
 
+funtion startSlideshow(){
+	
+}
 
 // Hardware Configure exit handler
 $(".program-pane-exit").click(function() {
