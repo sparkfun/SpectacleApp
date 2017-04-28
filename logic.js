@@ -500,6 +500,7 @@ function atou(str) {
 $(".canvas").on("keyup", ".project-text" ,(function(e) {
 $(this).height(1).height(this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth")));
 this.innerHTML = $(this).val();
+$(this).focus();
 }));
 
 // Delete a module from the project
