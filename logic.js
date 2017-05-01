@@ -7,7 +7,7 @@ progShow = setInterval(progSlideshow, 4000);
 
       var CLIENT_ID = '94915341399-fqt9irip5i9rtb94t6oroati0arftkc8.apps.googleusercontent.com';
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
-      var SCOPES = 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file';
+      var SCOPES = 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.install';
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
       var saveButton = document.getElementById('save-button');
