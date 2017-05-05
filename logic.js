@@ -1158,15 +1158,15 @@ function configBuilder(pseudo){
 				
 			case "led-twinkle-effect":
 				configString+="n\n"; // new behavior begin
-				configString+="1."+pseudoString[index+1]+"\n";
-				configString+="2."+Math.round(scale(pseudoString[index+7],0,1000,1,999))+"\n";
+				configString+="1."+pseudoString[index+0]+"\n";
+				configString+="2."+Math.round(scale(pseudoString[index+6],0,1000,1,999))+"\n";
 				configString+="1.7\n";
-				configString+="1."+pseudoString[index+2]+"\n";
-				configString+="4."+colorConvert(pseudoString[index+3])+"\n"; 
+				configString+="1."+pseudoString[index+1]+"\n";
+				configString+="4."+colorConvert(pseudoString[index+2])+"\n"; 
 				configString+="4.0\n";
-				configString+="1."+Math.round(scale(pseudoString[index+6],0,1000,0,59))+"\n";
-				configString+="1."+pseudoString[index+4]+"\n";
-				configString+="4."+Math.round(pseudoString[index+5]*2)+"\n"; // twinkle speed 2ms-2s									
+				configString+="1."+Math.round(scale(pseudoString[index+5],0,1000,0,59))+"\n";
+				configString+="1."+pseudoString[index+3]+"\n";
+				configString+="4."+Math.round(pseudoString[index+4]*2)+"\n"; // twinkle speed 2ms-2s									
 				break;
 				
 			case "led-lightning-effect":
