@@ -214,7 +214,7 @@ To start a new script, press OK.");
 
 function changeName(newName){
 var ProjectName = document.getElementById('project-name');
-ProjectName.innerHTML = newName;
+ProjectName.innerHTML = escapeHtml(newName);
 }
 
 // Initialize new project with a random adjective name
@@ -1621,4 +1621,10 @@ function boardID(boardName) {
 			break;
 	}
 	return id;
+}
+
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
 }
