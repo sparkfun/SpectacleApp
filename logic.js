@@ -644,7 +644,7 @@ motionModuleProto.innerHTML = '<div class=\"bar-drk\"><\/div>\
 <\/div>\
 <\/div>\
 <div class=\"act-menu\"> <ul> <a href=\"javascript:hideActMenu();\"> <li>Cancel<\/li><\/a>\
-<a href=\"javascript:addAction(\'motorSweep\');\"> <li>Sweep to Position<\/li><\/a>\
+<a href=\"javascript:addAction(\'motorSweep\');\"> <li>Toggle Position<\/li><\/a>\
 <a href=\"javascript:addAction(\'motorSweepReturn\');\"> <li>Sweep and Return<\/li><\/a>\
 <a href=\"javascript:addAction(\'motorWag\');\"> <li>Wagging Effect<\/li><\/a>\
 <a href=\"javascript:addAction(\'motorGoto\');\"> <li>Go To Position<\/li><\/a>\
