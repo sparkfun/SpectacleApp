@@ -1677,7 +1677,7 @@ function fileBuilder(fileContents){
 	
 	// Parse the XML formatted save-file
 	parser = new DOMParser();
-    	xmlDoc = parser.parseFromString(fileContents, "text/xml");
+    	xmlDoc = parser.parseFromString(fileContents, "text/plain");
 	console.log(xmlDoc);
 	
 	// Fill in basic info 
