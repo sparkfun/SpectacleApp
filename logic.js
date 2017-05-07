@@ -150,9 +150,10 @@ progShow = setInterval(progSlideshow, 4000);
 // Load cached project or linked project on pageload
 $(document).ready(function(){  
   if(localStorage.getItem("cached")!=null && getQueryVariable("fileID")==false){
-  $(".canvas").html(atou(localStorage.getItem("cached")));
-      $("input[type='color']").spectrum("destroy"); //kill inactive spectrum elements
-      $(".sp-replacer").remove(); //sweep away empty shells	  
+      $(".module").remove();	  
+      fileBuilder(localStorage.getItem("cached"));
+      $("input[type='color']").spectrum("destroy");
+      $(".sp-replacer").remove(); //sweep away empty shells
       $("input[type='color']").spectrum(); //rehook the colorpickers
   closeAllMenus();
   alert("The page was closed before changes were saved. Here's the last cached version of your project!");}
@@ -194,7 +195,7 @@ var autoSave = setInterval(cacheSave, 30000);
 
 // Save canvas object to localStorage
 function cacheSave(){
-    var text = utoa($(".canvas").html());
+    var text = encodeFile();
     localStorage.setItem("cached", text);
 }
 
