@@ -60,7 +60,7 @@ progShow = setInterval(progSlideshow, 4000);
       }
 
 	$(document).on("click", ".load-button-unauthed", function(){gapi.auth2.getAuthInstance().signIn();});
-	$(document).on("click", ".load-button-authed", function(){loadFromGoogleDrive(getQueryVariable("fileID"),loadFromBase64);});
+	$(document).on("click", ".load-button-authed", function(){loadFromGoogleDrive(getQueryVariable("fileID"),loadFromXML);});
 
 	$(document).on("click", ".save-button-unauthed", function(){gapi.auth2.getAuthInstance().signIn();});
 	$(document).on("click", ".save-button-authed", function(){saveToGoogleDrive();});
@@ -85,11 +85,12 @@ progShow = setInterval(progSlideshow, 4000);
 	  }		
 	}
 
-	function loadFromBase64(fileString){
-		$(".canvas").html(atou(fileString));
-		$("input[type='color']").spectrum("destroy"); //kill inactive spectrum elements
-		$(".sp-replacer").remove(); //sweep away empty shells	  
-		$("input[type='color']").spectrum(); //rehook the colorpickers
+	function loadFromXML(fileString){
+  		$(".module").remove();	  
+  		fileBuilder(reader.result);
+      		$("input[type='color']").spectrum("destroy");
+      		$(".sp-replacer").remove(); //sweep away empty shells
+      		$("input[type='color']").spectrum(); //rehook the colorpickers
 		closeAllMenus();	
 	}
 
@@ -99,7 +100,7 @@ progShow = setInterval(progSlideshow, 4000);
 	  const delimiter = "\r\n--" + boundary + "\r\n";
 	  const close_delim = "\r\n--" + boundary + "--";
 	  var filename = document.getElementById('project-name').innerHTML.split("&")[0] + ".spl";	
-	  var text = utoa($(".canvas").html());
+	  var text = encodeFile();
 		
 	    var metadata = {
 	      'title': filename,
