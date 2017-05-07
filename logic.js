@@ -87,7 +87,7 @@ progShow = setInterval(progSlideshow, 4000);
 
 	function loadFromXML(fileString){
   		$(".module").remove();	  
-  		fileBuilder(reader.result);
+  		fileBuilder(fileString);
       		$("input[type='color']").spectrum("destroy");
       		$(".sp-replacer").remove(); //sweep away empty shells
       		$("input[type='color']").spectrum(); //rehook the colorpickers
