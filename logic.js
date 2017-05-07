@@ -1673,6 +1673,8 @@ return(attrString);
 // Transmutes a save-file into an editable configuration 
 function fileBuilder(fileContents){
 
+	console.log(fileContents);
+	
 	// Parse the XML formatted save-file
 	parser = new DOMParser();
     	xmlDoc = parser.parseFromString(fileContents, "text/xml");
