@@ -105,7 +105,7 @@ progShow = setInterval(progSlideshow, 4000);
 		
 	    var metadata = {
 	      'title': filename,
-	      'mimeType': 'text/plain',
+	      'mimeType': 'application/spectacle',
 	      'contentHints.thumbnail.image': encodedIcon,
   	      'contentHints.thumbnail.mimeType': 'image/png'
 	    };
