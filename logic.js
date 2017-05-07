@@ -111,7 +111,7 @@ progShow = setInterval(progSlideshow, 4000);
 		'Content-Type: application/json\r\n\r\n' +
 		JSON.stringify(metadata) +
 		delimiter +
-		'Content-Type: ' + 'text/plain' + '\r\n\r\n\r\n' +
+		'Content-Type: ' + 'text/plain' + '\r\n\r\n\r' +
 		text +
 		close_delim;
 	    var request = gapi.client.request({
