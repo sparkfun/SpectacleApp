@@ -99,7 +99,7 @@ progShow = setInterval(progSlideshow, 4000);
 	  const boundary = 'nick_wuz_here_4652801374921';
 	  const delimiter = "\r\n--" + boundary + "\r\n";
 	  const close_delim = "\r\n--" + boundary + "--";
-	  var filename = document.getElementById('project-name').innerHTML.split("&")[0] + ".xml";	
+	  var filename = document.getElementById('project-name').innerHTML.split("&")[0] + ".spxml";	
 	  var text = encodeFile();
 		
 	    var metadata = {
