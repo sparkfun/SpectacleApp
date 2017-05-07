@@ -91,6 +91,7 @@ progShow = setInterval(progSlideshow, 4000);
       		$("input[type='color']").spectrum("destroy");
       		$(".sp-replacer").remove(); //sweep away empty shells
       		$("input[type='color']").spectrum(); //rehook the colorpickers
+		$("#project-decription").keyup();
 		closeAllMenus();	
 	}
 
@@ -155,6 +156,7 @@ $(document).ready(function(){
       $("input[type='color']").spectrum("destroy");
       $(".sp-replacer").remove(); //sweep away empty shells
       $("input[type='color']").spectrum(); //rehook the colorpickers
+      $("#project-decription").keyup();
   closeAllMenus();
   alert("The page was closed before changes were saved. Here's the last cached version of your project!");}
   if(getQueryVariable("fileID")){
@@ -484,20 +486,12 @@ function handleFileSelect(evt) {
       $("input[type='color']").spectrum("destroy");
       $(".sp-replacer").remove(); //sweep away empty shells
       $("input[type='color']").spectrum(); //rehook the colorpickers
+      $("#project-decription").keyup();
   }
   reader.readAsText(files[0]);
   }
 
 document.getElementById('files').addEventListener('change', handleFileSelect, false);
-
-// unicode string to base64 encoded ascii
-function utoa(str) {
-    return window.btoa(unescape(encodeURIComponent(str)));
-}
-// base64 encoded ascii to unicode string
-function atou(str) {
-    return decodeURIComponent(escape(window.atob(str)));
-}
 
 // Project Textarea Resize Handler
 $(".canvas").on("keyup", ".project-text" ,(function(e) {
