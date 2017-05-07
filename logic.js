@@ -448,10 +448,10 @@ window.location.href = 'https://sparkfun.github.io/spectacleapp/';
 
 // Save editable project file locally
 function saveCanvas() {
-  var text = utoa($(".canvas").html());
+  var text = encodeFile();
   var filename = document.getElementById('project-name').innerHTML.split("&")[0];
-  var blob = new Blob([text], {type: "text/plain"});
-  saveAs(blob, filename+".spl");
+  var blob = new Blob([text], {type: "text/xml"});
+  saveAs(blob, filename+".xml");
   pseudoConfig();
 }
 
@@ -477,7 +477,8 @@ function handleFileSelect(evt) {
   var files = evt.target.files; // FileList object
   var reader = new FileReader();
   reader.onload = function(e) {
-  $(".canvas").html(atou(reader.result));
+  $(".module").remove();	  
+  fileBuilder(reader.result);
       $("input[type='color']").spectrum("destroy");
       $(".sp-replacer").remove(); //sweep away empty shells
       $("input[type='color']").spectrum(); //rehook the colorpickers
@@ -1628,3 +1629,413 @@ function escapeHtml(str) {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
 }
+
+// Returns a comma-separated save-file
+function encodeFile(){
+
+var attrString = "";
+
+attrString += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?> \n\n";	
+	
+attrString += "<config>\n\n";	
+attrString += "<title>" + $("#project-name").html() + "</title>\n";
+attrString += "<description>" + $("#project-decription").html() + "</description>\n\n";
+
+$(".canvas").find(".module").each(function(){
+	attrString += "<board type=\"" + $(this).find(".actions-list").attr("class").split(' ')[1] + "\" nickname=\"";	
+	attrString += $(this).find("#mod-nick").html() + "\">\n\n";	
+		$(this).find(".actions-list").find(".action").each(function(){
+			attrString += "\t\t<action type=\"" + $(this).attr("class").split(' ')[1] + "\">\n";	
+			$(this).find("input").each(function(){
+				if($(this).hasClass("radio")){
+					if($(this).attr("data-checked")!=undefined){
+					attrString += "\t\t<entry>1</entry>\n";
+					}else{
+					attrString += "\t\t<entry>0</entry>\n";
+					}
+				}else if($(this).hasClass("color")){
+					attrString += "\t\t<entry>" + $(this).attr("value") + "</entry>\n";
+				}else{
+					attrString += "\t\t<entry>" + $(this).val() + "</entry>\n";
+					}
+			});
+		attrString += "\t\t</action>\n\n";
+		});
+	attrString += "</board>\n\n";	
+	});
+	
+attrString += "\n</config>";
+console.log(attrString);
+return(attrString);
+};
+
+// Transmutes a save-file into an editable configuration 
+function fileBuilder(fileContents){
+
+	// Parse the XML formatted save-file
+	parser = new DOMParser();
+    	xmlDoc = parser.parseFromString(fileContents, "text/xml");
+	console.log(xmlDoc);
+	
+	// Fill in basic info 
+	changeName(xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue);
+	
+	$("#project-decription").html(escapeHtml(xmlDoc.getElementsByTagName("description")[0].childNodes[0].nodeValue));
+	
+	
+	// Insert Boards into Canvas
+	var boardIndex = 0;
+	
+	while(xmlDoc.getElementsByTagName("board")[boardIndex] != undefined){
+	
+		console.log("...");
+		console.log(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[0].nodeValue);
+		
+		switch (xmlDoc.getElementsByTagName("board")[boardIndex].attributes[0].nodeValue) {
+		
+			case "light":
+				buildLight(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}
+			break;
+				
+			case "button":	
+				buildButton(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}		
+			break;
+				
+			case "accel":				
+				buildAccel(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}		
+			break;
+				
+			case "motion":				
+				buildMotion(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}			
+			break;
+				
+			case "sound":			
+				buildAudio(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}			
+			break;
+				
+			case "virtual":			
+				buildVirtual(xmlDoc.getElementsByTagName("board")[boardIndex].attributes[1].nodeValue);
+				var actionIndex = 0;
+				console.log(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue);
+				while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex] != undefined){
+					buildAction(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].attributes[0].nodeValue, boardIndex, actionIndex);	
+					actionIndex++;
+				}				
+			break;
+											
+		}
+		
+			boardIndex++;
+		
+	}
+	
+	$(".act-menu").hide();
+	$(".actions-list").hide();
+}
+
+/*************** Module Builders ****************/
+
+function buildLight(nickName){
+    var newModule;	
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(lightModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(lightModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	// Fix virtual module position to bottom of document	
+        $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);
+	
+};
+
+function buildButton(nickName){
+    var newModule;
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(buttonModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(buttonModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	// Fix virtual module position to bottom of document	
+        $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);
+	
+};
+
+function buildAccel(nickName){
+    var newModule;	
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(accelModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(accelModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	// Fix virtual module position to bottom of document	
+        $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);
+	
+};
+
+function buildMotion(nickName){
+    var newModule;
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(motionModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(motionModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	// Fix virtual module position to bottom of document	
+        $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);
+	
+};
+
+function buildAudio(nickName){
+    var newModule;
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(soundModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(soundModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	// Fix virtual module position to bottom of document	
+        $(".virtual-module").insertAfter($(".canvas").children('.module').slice(-1)[0]);	
+};
+
+function buildVirtual(nickName){
+    var newModule;
+	if (typeof $(".canvas").children('.virtual-module').slice(-1)[0] !== 'undefined') {
+		alert("There's already a virtual board attached to this project.\n\n You can only add one virtual board to your project, but that board can contain as many actions as you like!");
+	}else{
+    if (typeof $(".canvas").children('.module').slice(-1)[0] !== 'undefined') {
+    newModule = $(virtualModuleProto).clone().insertAfter($(".canvas").children('.module').slice(-1)[0]);}
+    else {
+    newModule = $(virtualModuleProto).clone().insertAfter($(".canvas").children('.project-info-module').slice(-1)[0]);};
+	$(newModule).find("#mod-nick").val(nickName);
+	$(newModule).find("#mod-nick").html(nickName);
+	};
+};
+
+function buildAction(actionName, boardIndex, actionIndex) {
+	
+	console.log("building...");
+	
+	newAction = window[actionTranslate(actionName)];
+	var freshAction = $(newAction).clone().appendTo( $(".module").eq(boardIndex).find(".actions-list")[0] );
+	var actionsList = $(".module").eq(boardIndex).find(".actions-list")[0];
+	// Get rid of the action spacer which is now in the middle of the list
+	$(actionsList).find(".action-spacer").remove();
+	$(actionsList).find(".add-reminder").hide();
+	// Toss that badboy back onto the end of the list
+	$(actionSpacer).clone().appendTo( $(".module").eq(boardIndex).find(".actions-list")[0] );
+	
+	// Fill in Action Details
+	var entryIndex = 0;
+	
+	while(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].getElementsByTagName("entry")[entryIndex] != undefined) {		
+	
+	if(xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].getElementsByTagName("entry")[entryIndex].firstChild != null){
+	var entryVal = xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].getElementsByTagName("entry")[entryIndex].firstChild.nodeValue;	
+	}else{
+	var entryVal = xmlDoc.getElementsByTagName("board")[boardIndex].getElementsByTagName("action")[actionIndex].getElementsByTagName("entry")[entryIndex].firstChild;	
+	}
+		
+	var thisInput = $(freshAction).find("input")[entryIndex];
+		
+		if($(thisInput).hasClass("radio")){
+					if(entryVal == "1" ){
+					$(thisInput).click(); //give attr
+					}else{
+					//remove attr
+					}
+				}else if($(thisInput).hasClass("color")){
+					$(thisInput).attr("value", entryVal);
+					$(thisInput).val(entryVal);
+				}else{
+					$(thisInput).val(entryVal);
+					$(thisInput).html(entryVal);
+					$(thisInput).attr("value", entryVal);
+					}
+	entryIndex++	
+	};
+	
+	// Update board view actions lists
+	var shortlist = "";
+	if( $(actionsList).children(".action").length){
+	 $(actionsList).children(".action").each(function(){
+		var actionname = $(this).attr("class").split(" ")[1];
+		var firstword = actionname.split("-")[0];
+		shortlist += "\u2022" + actionname.replace(/-/g," ").replace(firstword,"") + " on ";
+                if($(this).find(".channel").val() != ""){shortlist += "channel " + $(this).find(".channel").val();}
+		else{shortlist += "unspecified channel";}
+		shortlist += "\n";
+	});	
+	 $(actionsList).closest(".module").find("#mod-acts").html(shortlist);
+	 $(actionsList).closest(".module").find("#mod-acts").keyup();
+	 console.log($(actionsList).closest(".module").find("#mod-acts"));}
+	else{
+	 $(actionsList).closest(".module").find("#mod-acts").html("No Actions Assigned");
+	 $(actionsList).closest(".module").find("#mod-acts").keyup();			
+	}
+	// For some reason iOS misses this hook on dynamically generated elements so we re-assert
+    $(freshAction).find("input[type='color']").spectrum();
+	$(".act-menu").hide();
+	$("blank-foot").hide();
+	$("actions-foot").show();
+	
+};
+
+function actionTranslate(inName){
+	
+	switch (inName) {
+		
+			case "led-rainbow-effect":
+				return "ledRainbowEffect";
+				break;
+				
+			case "led-theater-chase":
+				return "ledTheaterChase";
+				break;
+				
+			case "led-scanning-effect":
+				return "ledScanningEffect";
+				break;
+				
+			case "led-twinkle-effect":
+				return "ledTwinkleEffect";					
+				break;
+				
+			case "led-lightning-effect":
+				return "ledLightningEffect";				
+				break;
+				
+			case "led-flame-effect":
+				return "ledFlameEffect";				
+				break;
+				
+			case "led-fade-lights":
+				return "ledFade";					
+				break;
+				
+			case "led-fill-color":
+				return "ledFill";						
+				break;
+				
+			case "led-light-pixel":
+				return "ledPixel";										
+				break;
+				
+			case "button-action-on-press":
+				return "buttonPress";
+				break;
+				
+			case "button-action-on-release":
+				return "buttonRelease";
+				break;
+				
+			case "button-action-on-press-and-release":
+				return "buttonClick";
+				break;
+				
+			case "button-action-while-holding":
+				return "buttonHold";
+				break;
+				
+			case "button-latch-on-latch-off":
+				return "buttonLatch";
+				break;
+				
+			case "inertia-sense-motion":
+				return "inertiaMotionSense";
+				break;
+				
+			case "inertia-sense-orientation":
+				return "inertiaOrientationSense";				
+				break;
+				
+			case "inertia-measure-acceleration":
+				return "inertiaMeasureAccel";
+				break;
+
+			case "motor-toggle-position":
+; 				return "motorSweep";													
+				break;
+				
+			case "motor-sweep-and-return":
+ 				return "motorSweepReturn";																
+				break;
+				
+			case "motor-wag":
+				return "motorWag";																	
+				break;
+				
+			case "motor-go-to-position":
+				return "motorGoto";																	
+				break;
+				
+			case "sound-play-sound":
+				return "soundPlay";
+				break;
+				
+			case "virtual-invert-filter":
+				return "virtualInvert";
+				break;
+	
+			case "virtual-both-active-filter":
+				return "virtualAnd";
+				break;
+	
+			case "virtual-channel-combiner":
+				return "virtualOr";		
+				break;
+	
+			case "virtual-difference-detector":
+				return "virtualXor";	
+				break;
+	
+			case "virtual-random-input":
+				return "virtualRandom";						
+				break;
+	
+			case "virtual-periodic-input":
+				return "virtualPeriodic";
+				break;
+	
+			case "virtual-sustained-input":
+				return "virtualSustained";
+				break;
+	
+			case "virtual-constant-input":
+				return "virtualConstant";			
+				break;			
+		
+		}
+	
+};
