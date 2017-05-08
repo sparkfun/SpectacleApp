@@ -487,6 +487,7 @@ function handleFileSelect(evt) {
       $(".sp-replacer").remove(); //sweep away empty shells
       $("input[type='color']").spectrum(); //rehook the colorpickers
       $("#project-decription").keyup();
+      closeAllMenus();
   }
   reader.readAsText(files[0]);
   }
