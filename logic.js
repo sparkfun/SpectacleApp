@@ -1486,7 +1486,6 @@ var AudioContext = window.AudioContext || window.webkitAudioContext;
 var context = new AudioContext();
 
 /* Send the given string of data out over audio. 
-
    If you send characters outside the range 0-255,
    they will be interpreted as a break (so not transmitted).
 */
