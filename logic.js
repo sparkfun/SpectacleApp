@@ -961,8 +961,8 @@ $(document).on("change", ".light-count", function() {
 
 $(document).on("change", ".pixel-number", function() {
     $(this).val(Math.round($(this).val()));
-  if (parseInt($(this).val(), 10) > 59) {
-    $(this).val(59);
+  if (parseInt($(this).val(), 10) > 60) {
+    $(this).val(60);
   }else if(parseInt($(this).val(), 10) < 0){
 	$(this).val(0);
   }
