@@ -281,11 +281,11 @@ $(".cross").click();}
 
 // Handler for "Add Module" navigation action
 $(".add-module").click(function() {
-  $("exit-foot").css('pointer-events','none');	
+  $("footer").css('pointer-events','none');	
   $(".module-list").slideToggle(slideDur, function() {
-    $("footer").hide();
     $("exit-foot").show();
-    $("exit-foot").css('pointer-events','auto');		  
+    $("footer").hide();
+    $("footer").css('pointer-events','auto');		  
   });
 });
 
@@ -368,11 +368,13 @@ $(document).on("click", ".act-list-exit", (function(){
 
 // Hardware Configure Menu Handler
 $(".config-hw").click(function() {
+    $("footer").css('pointer-events','none');
     $(".program-hardware").slideToggle(slideDur, function() {
 	slideNum = 0;
 	progSlideshow();
-    $("footer").hide();
     $("program-foot").show();
+    $("footer").hide();
+    $("footer").css('pointer-events','auto');
   });
   });
 
@@ -436,9 +438,11 @@ $(".program-pane-exit").click(function() {
 
 // Share Project Menu Handler
 $(".share-you-project").click(function() {
+$("footer").css('pointer-events','none');	
     $(".share-project").slideToggle(slideDur, function() {
-    $("footer").hide();
     $("share-foot").show();
+    $("footer").hide();
+    $("footer").css('pointer-events','auto');  
   });
   });
 
